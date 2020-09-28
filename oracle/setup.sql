@@ -1,6 +1,6 @@
 -- run this as root
 
--- drop user me cascade;
+drop user me cascade;
 
 create user me identified by password account unlock;
 grant connect, resource to me;

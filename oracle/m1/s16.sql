@@ -12,7 +12,12 @@ select first_name, last_name, salary
 from employees
 order by salary desc;
 
--- positional notation
+-- 
+select *
+from employees
+order by last_name desc, first_name asc;
+
+-- positional notation, by 2 per last_name
 select first_name, last_name
 from employees
 order by 2;

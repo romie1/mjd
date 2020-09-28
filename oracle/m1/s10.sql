@@ -4,13 +4,13 @@
 alter session set current_schema = hr;
 
 -- a select
-select region_name
-from regions
-where region_id = 1;
+SELECT region_name
+FROM regions
+WHERE region_id = 1;
 
 -- select all
-select *
-from regions;
+SELECT *
+FROM regions;
 
 -- select distinct
 select distinct manager_id
