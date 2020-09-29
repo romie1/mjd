@@ -4,7 +4,7 @@ alter session set current_schema = hr;
 
 -- a) subquery in where:
 -- Chen manager name
--- !!! risky !!!
+-- !!! risky !!! perchè ci potrebbero essere due chen
 select first_name, last_name
 from employees
 where employee_id = (

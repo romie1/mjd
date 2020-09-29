@@ -14,7 +14,7 @@ from dual;
 select replace('Begin here', 'Begin', 'End') replaced
 from dual;
 
--- substring
+-- substring, parti dall'indice 3 e prendi 4 caratteri
 select substr('ABCDEFG',3,4) sub
 from dual;
 

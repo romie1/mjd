@@ -20,7 +20,7 @@ from dual;
 
 -- find substring
 
--- not found -> 0
+-- not found -> 0 instr è una substring, cerca se dentro una stringa c'è una sottostringa
 select instr('crab', 'ba') as "not found"
 from dual;
 
@@ -33,6 +33,7 @@ select instr('crab abba rabid cab', 'ab', 4) as pos
 from dual;
 
 -- search from given position the nth occurrence
+-- cerca dall'indice 4 e cerca la terza occurrenza
 select instr('crab abba rabid cab', 'ab', 4, 3) as pos
 from dual;
 

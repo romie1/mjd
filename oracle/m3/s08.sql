@@ -7,7 +7,10 @@ from dual;
 select to_char(12345.67, '9.9')
 from dual;
 
-select to_char(2020, 'RN'), to_number('970,13') * 2
+select to_char(2020, 'RN'), to_number('970.13') * 2
+from dual;
+
+select to_number('970.13') * 2
 from dual;
 
 -- from string to date, then increase
@@ -20,4 +23,7 @@ from dual;
 
 -- not fitting -> error
 select cast(12345.678 as number(4))
+from dual;
+
+select to_date('2020-06-05', 'YYYY-MM-DD')
 from dual;

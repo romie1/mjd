@@ -19,3 +19,5 @@ select *
 from clients;
 
 delete from clients where client_id > 10;
+
+rollback;

@@ -39,7 +39,7 @@ from dual;
 select log(10, 100)
 from dual;
 
--- rounding
+-- rounding 1 arrotonda decimale. -1 arrotonda alle decine
 select round(5.75), round(5.75, 1), round(5.75, -1)
 from dual;
 

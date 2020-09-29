@@ -1,7 +1,7 @@
 -- update
 
 alter session set current_schema = me;
-
+select * from clients;
 -- updating more rows
 update clients
 set name = 'Client ' || client_id
