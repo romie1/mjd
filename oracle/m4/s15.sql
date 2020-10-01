@@ -4,6 +4,15 @@ alter session set current_schema = me;
 
 -- create 
 create sequence my_seq;
+create sequence execs_seq start with 200 increment by 1;
+drop sequence execs_seq;
+
+select * from execs;
+
+insert into execs(exec_id, first_name, last_name, hire_date, salary)
+values(execs_seq.nextval, 'Tommy', 'Brady', sysdate, 1000);
+
+delete from execs where exec_id = 1;
 
 -- next value
 select my_seq.nextval

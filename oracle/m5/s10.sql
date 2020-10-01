@@ -10,3 +10,5 @@ begin
     end loop;
 end;
 /
+
+select last_name, hire_date from coders;

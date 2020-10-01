@@ -11,7 +11,7 @@ create table items (
 select * from items;
 
 insert into items (item_id)
-values (12);
+values (23);
 
 update items
 set status = 'x'
