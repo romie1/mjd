@@ -48,9 +48,9 @@ class SelectorTest {
 
     @Test
     void getCodersBySalary6000() throws SQLException {
-        int minSalary = 6000;
-        String[] expectedNames = { "Alexander", "Bruce" };
-        int[] expectedSalaries = { 9000, 6000 };
+        int minSalary = 7000;
+        String[] expectedNames = { "Alexander", "Bruce", "Tim" };
+        int[] expectedSalaries = { 9000, 7800, 7488 };
 
         List<Coder> actual = selector.getCodersBySalary(minSalary);
 
@@ -64,9 +64,9 @@ class SelectorTest {
 
     @Test
     void getCodersBySalaryString6000() throws SQLException {
-        String minSalary = "6000";
-        String[] expectedNames = { "Alexander", "Bruce" };
-        int[] expectedSalaries = { 9000, 6000 };
+        String minSalary = "7000";
+        String[] expectedNames = { "Alexander", "Bruce", "Tim" };
+        int[] expectedSalaries = { 9000, 7800, 7488 };
 
         List<Coder> actual = selector.getCodersBySalary(minSalary);
 
@@ -107,8 +107,8 @@ class SelectorTest {
         char letter = 'u';
         List<Coder2> expected = new ArrayList<>(3);
         expected.add(new Coder2("Alexander", "Hunold", 9000.0));
-        expected.add(new Coder2("Bruce", "Ernst", 6000.0));
-        expected.add(new Coder2("David", "Austin", 4800.0));
+        expected.add(new Coder2("Bruce", "Ernst", 7800.0));
+        expected.add(new Coder2("David", "Austin", 6240.0));
 
         List<Coder2> actual = selector.getCodersWithLetterIn(letter);
         assertThat(actual, is(expected));

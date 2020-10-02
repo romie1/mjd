@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import s09.Coder;
 import s09.Coder2;
+import s09.Coder3;
 
 public class PreparedSelector {
     private static final Logger LOG = LoggerFactory.getLogger(PreparedSelector.class);
@@ -19,7 +20,7 @@ public class PreparedSelector {
     /** MySQL */
 //  private static final String URL = "jdbc:mysql://localhost:3306/me";
     /** Oracle DB */
-    private static final String URL = "jdbc:oracle:thin:@127.0.0.1:1521/xe";
+    private static final String URL = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
     private static final String USER = "me";
     private static final String PASSWORD = "password";
 
@@ -65,5 +66,23 @@ public class PreparedSelector {
 
             return results;
         }
+    }
+    
+    public List<Coder3> getCodersHired2007(int year) throws SQLException {
+    	final String query = "select first_name, last_name, hire_date from coders where EXTRACT(YEAR FROM TO_DATE(hire_date, 'DD-MON-YY')) = ?";
+    	List<Coder3> results = new ArrayList<>();
+
+    	try(Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+    			PreparedStatement preparedStatement = connection.prepareStatement(query)){
+    		preparedStatement.setInt(1, year);
+    		
+    		try(ResultSet rs = preparedStatement.executeQuery()){
+    			while(rs.next()) {
+    				results.add(new Coder3(rs.getString(1), rs.getString(2), rs.getDate(3).toLocalDate()));
+    			}
+    		}
+    	}
+    	
+    	return results;
     }
 }

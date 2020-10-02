@@ -41,7 +41,6 @@ public class Transactor {
 
             try {
                 System.out.println("Inserting new coder ...");
-                // TODO: exercise, rewrite this code in a safer way
                 // MySQL-specific query
 //                stmt.executeUpdate("INSERT INTO coders VALUES(301, 'John', 'Coltrane', CURDATE(), 6000)");
                 // Oracle-specific query

@@ -2,7 +2,7 @@ package s09;
 
 /**
  * Another JavaBean for the CODERS table
- * 
+ * implements Comparable<Coder2> <- add if you want to do sort with comparable
  * @author egall
  */
 public class Coder2 {
@@ -64,6 +64,7 @@ public class Coder2 {
     public String toString() {
         return "Coder2 [firstName=" + firstName + ", lastName=" + lastName + ", salary=" + salary + "]";
     }
+
 
 //    @Override
 //    public int compareTo(Coder2 other) {

@@ -30,7 +30,7 @@ class StoredProcedureTest {
          * 107, Diana, Lorentz, 2007-02-07, 4210.00
          */
         int coderId = 107;
-        double expected = 4210.0;
+        double expected = 5460.0;
 
         double actual = sp.getCoderSalary(coderId);
         assertThat(actual, closeTo(expected, 0.0001));

@@ -13,8 +13,7 @@ public class Coder {
     private String lastName;
     private int salary; // ?!
 
-    public Coder() {
-    }
+    public Coder() {}
 
     public Coder(String firstName, String lastName, int salary) {
         this.firstName = firstName;

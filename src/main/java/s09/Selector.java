@@ -29,14 +29,14 @@ public class Selector {
     private static final String SELECT_CODERS_BY_SALARY_DOUBLE = "SELECT first_name, last_name, salary FROM coders WHERE salary >= %d ORDER BY 3 DESC";
     private static final String SELECT_CODERS_BY_SALARY_STRING = "SELECT first_name, last_name, salary FROM coders WHERE salary >= %s ORDER BY 3 DESC";
 
+    
     public List<String> getCoderNames() throws SQLException {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(SELECT_NAMES)) {
             List<String> results = new ArrayList<>();
             while (rs.next()) {
-                String current = rs.getString(1);
-                results.add(current);
+                results.add(rs.getString(1));
             }
 
             return results;
@@ -131,4 +131,6 @@ public class Selector {
             return results;
         }
     }
+    
+    
 }
