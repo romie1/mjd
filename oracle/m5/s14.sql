@@ -1,4 +1,5 @@
 -- create function
+-- set serveroutput on
 
 create or replace function get_salary(
     p_coder_id in coders.coder_id%type)
